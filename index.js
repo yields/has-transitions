@@ -1,4 +1,3 @@
-
 /**
  * Check if `el` or browser supports transitions.
  *
@@ -27,7 +26,7 @@ exports = module.exports = function(el){
 function transitions(el, styl){
   if (el.transition) return true;
   styl = window.getComputedStyle(el);
-  return !! styl.transition;
+  return !! parseFloat(styl.transitionDuration, 10);
 }
 
 /**
